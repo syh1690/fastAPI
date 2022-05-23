@@ -2,6 +2,9 @@ from typing import Optional
 
 from fastapi import FastAPI
 
+import json
+data = json.load(open('./sampledata.json', 'r'))
+
 app = FastAPI()
 
 
@@ -14,6 +17,10 @@ def read_root():
 def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
-@app.get("/syh1690")
-def read_profile_page():
-    return {"str": "Welcome to Sunyup's page"}
+@app.get("/fpl/events/{week}")
+def read_profile_page(week: int):
+    return data["events"][week-1]
+
+@app.get("/fpl/events/highest_score/{week}")
+def read_profile_page(week: int):
+    return data["events"][week-1]["highest_score"]    
