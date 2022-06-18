@@ -2,7 +2,7 @@
 
 1. Activates virtual environment  
 
-        source env/bin/activate  
+        source env/bin/activate
 
 2.  Installs all libraries in requirements.txt into virtual environment
 
@@ -12,7 +12,7 @@
 
         uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
 
-4. Stop the server on local API
+4. Stop the server on local API by running command below in terminal
 
         control + c
 
