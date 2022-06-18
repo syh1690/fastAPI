@@ -23,6 +23,8 @@ docker build -t syh_api .
 docker run -d --name mycontainer -p 80:80 syh_api
 #runs docker image locally
 
+
+###steps to deploy to azure cloud###
 docker login
 docker tag syh_api:latest syh1690/syh-api
 docker push syh1690/syh-api:latest

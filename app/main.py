@@ -11,10 +11,12 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/",response_class=HTMLResponse)
-# def read_root():
-#     return 
 def read_item(request: Request):
     return templates.TemplateResponse("home.html",{"request": request})
+
+@app.get("/resume",response_class=HTMLResponse)
+def read_item(request: Request):
+    return templates.TemplateResponse("resume.html",{"request": request})
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
