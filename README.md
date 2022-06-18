@@ -1,31 +1,40 @@
-*****steps to run API locally******
+# Steps to run API locally
 
-source env/bin/activate   
-#activates virtual environment
+1. Activates virtual environment  
 
-pip3 install -r requirements.txt
-#installs all libraries in requirements.txt into virtual environment
+        source env/bin/activate  
 
-uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
-#runs API on local host
+2.  Installs all libraries in requirements.txt into virtual environment
 
-control + c
-#stop the server on local API
+        pip3 install -r requirements.txt
 
-deactivate
-#deactivates virtual environment
+3. Runs API on local host
 
-###steps to build docker image and deploy###
+        uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
 
-docker build -t syh_api .
-#builds docker image
+4. Stop the server on local API
 
-docker run -d --name mycontainer -p 80:80 syh_api
-#runs docker image locally
+        control + c
 
+5. Deactivates virtual environment
 
-###steps to deploy to azure cloud###
-docker login
-docker tag syh_api:latest syh1690/syh-api
-docker push syh1690/syh-api:latest
-#restart azure container instance to pull in new docker image
+        deactivate
+
+# Steps to build docker image and deploy
+
+1. Builds docker image
+
+        docker build -t syh_api .
+
+2. Runs docker image locally
+
+        docker run -d --name mycontainer -p 80:80 syh_api
+
+#  steps to deploy to azure cloud
+1. Run the commands in the terminal below
+
+        docker login
+        docker tag syh_api:latest syh1690/syh-api
+        docker push syh1690/syh-api:latest
+
+2. Restart azure container instance to pull in new docker image
