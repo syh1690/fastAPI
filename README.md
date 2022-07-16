@@ -1,3 +1,6 @@
+# OVERVIEW
+This REST API exposes Fantasy English Premiere League data 
+
 # Steps to run API locally
 
 1. Activates virtual environment  
